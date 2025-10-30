@@ -30,6 +30,10 @@ class Lotto {
 
     return matchCount;
   }
+
+  contains(bonusNumber) {
+    return this.#numbers.some((number) => number === bonusNumber);
+  }
 }
 
 export default Lotto;
