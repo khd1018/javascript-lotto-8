@@ -19,5 +19,10 @@ class LottoPrize {
     this.#totalProfit += PRIZE_BY_RANK[rank];
   }
 
-  calculateProfitRate() {}
+  calculateProfitRate() {
+    const profitRate = (this.#totalProfit / this.#budget) * 100;
+    return profitRate.toFixed(1);
+  }
 }
+
+export default LottoPrize;
