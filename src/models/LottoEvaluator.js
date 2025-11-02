@@ -24,6 +24,12 @@ class LottoEvaluator {
     }
   }
 
+  #validateCount(winningNumbers) {
+    if (winningNumbers.length !== 6) {
+      throw new Error("[ERROR] 당첨 번호는 숫자 6개만 입력하셔야 합니다.");
+    }
+  }
+
   rateRank(lotto) {
     const matchCount = lotto.countMatches(this.#winningNumbers);
     const RANK_MAP = {
