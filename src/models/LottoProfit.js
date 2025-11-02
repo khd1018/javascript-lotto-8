@@ -18,7 +18,7 @@ class LottoProfit {
     }
   }
 
-  sumAllProfits(rank) {
+  addPrizeBy(rank) {
     const PRIZE_BY_RANK = {
       first: 2000000000,
       second: 30000000,
