@@ -1,4 +1,4 @@
-class LottoPrize {
+class LottoProfit {
   #budget;
   #totalProfit;
 
@@ -25,4 +25,4 @@ class LottoPrize {
   }
 }
 
-export default LottoPrize;
+export default LottoProfit;
