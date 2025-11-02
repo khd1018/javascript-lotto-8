@@ -3,8 +3,25 @@ class LottoEvaluator {
   #winningNumbers;
 
   constructor(bonusNumber, winningNumbers) {
+    this.#validate(bonusNumber, winningNumbers);
     this.#bonusNumber = bonusNumber;
     this.#winningNumbers = winningNumbers;
+  }
+
+  #validate(bonusNumber, winningNumbers) {
+    winningNumbers.forEach((winningNumber) => {
+      this.#validateOutOfRange(winningNumber);
+    });
+    this.#validateOutOfRange(bonusNumber);
+    this.#validateCount(winningNumbers);
+    this.#validateBonusDuplication(bonusNumber, winningNumbers);
+    this.#validateDuplication(winningNumbers);
+  }
+
+  #validateOutOfRange(number) {
+    if (number < 1 || number > 45) {
+      throw new Error("[ERROR] 1~45사이의 숫자를 입력하셔야 합니다.");
+    }
   }
 
   rateRank(lotto) {
