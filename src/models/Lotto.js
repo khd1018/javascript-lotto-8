@@ -19,6 +19,10 @@ class Lotto {
     }
   }
 
+  getNumbers() {
+    return this.#numbers;
+  }
+
   countMatches(winningNumbers) {
     let matchCount = 0;
 
