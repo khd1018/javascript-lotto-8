@@ -21,7 +21,11 @@ export const OutputView = {
     Console.print("당첨 통계\n---");
 
     Object.keys(this.RANK_STRING).forEach((rank) => {
-      Console.print(`${this.RANK_STRING[rank]} - ${rankStats[rank]}`);
+      Console.print(`${this.RANK_STRING[rank]} - ${rankStats[rank]}개\n`);
     });
+  },
+
+  printProfitRate(profitRate) {
+    Console.print(`총 수익률은 ${profitRate}%입니다.`);
   },
 };
