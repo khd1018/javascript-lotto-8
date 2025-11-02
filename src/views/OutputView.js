@@ -9,6 +9,10 @@ export const OutputView = {
     fifth: "3개 일치 (5,000원)",
   },
 
+  print(message){
+    Console.print(message)
+  }
+
   printNumbers(lottos) {
     Console.print(`${lottos.length}개를 구매했습니다.\n`);
 
