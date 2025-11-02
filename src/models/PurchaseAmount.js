@@ -15,6 +15,10 @@ class PurchaseAmount {
       throw new Error("[ERROR] 구매금액은 100,000원 이하로 입력해주세요. ");
     }
   }
+
+  getLottoCount() {
+    return this.#budget / 1000;
+  }
 }
 
 export default PurchaseAmount;
