@@ -1,5 +1,5 @@
 import { Random } from "@woowacourse/mission-utils";
-import Lotto from "./models/Lotto.js";
+import Lotto from "../models/Lotto.js";
 
 class LottoFactory {
   static createLottos(lottoCount) {
