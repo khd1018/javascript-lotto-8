@@ -37,7 +37,7 @@ class LottoEvaluator {
   }
 
   #validateDuplication(winningNumbers) {
-    if (new Set(winningNumbers).size < winningNumbers) {
+    if (new Set(winningNumbers).size < winningNumbers.length) {
       throw new Error("[ERROR] 당첨 번호는 서로 다른 숫자들을 입력하셔야 합니다.");
     }
   }
