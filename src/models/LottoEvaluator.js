@@ -30,6 +30,12 @@ class LottoEvaluator {
     }
   }
 
+  #validateBonusDuplication(bonusNumber, winningNumbers) {
+    if (winningNumbers.includes(bonusNumber)) {
+      throw new Error("[ERROR] 보너스번호는 당첨번호와 중복되지 않는 숫자를 입력하셔야 합니다.");
+    }
+  }
+
   rateRank(lotto) {
     const matchCount = lotto.countMatches(this.#winningNumbers);
     const RANK_MAP = {
