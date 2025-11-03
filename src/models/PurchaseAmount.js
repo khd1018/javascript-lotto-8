@@ -1,3 +1,5 @@
+import { ERROR_MESSAGE } from "../constants/messages";
+
 class PurchaseAmount {
   #budget;
 
@@ -8,11 +10,11 @@ class PurchaseAmount {
 
   #validate(budget) {
     if (budget % 1000 !== 0) {
-      throw new Error("[ERROR] 구매금액은 1,000원 단위로 입력해주세요. ");
+      throw new Error(ERROR_MESSAGE.INVALID_UNIT);
     }
 
     if (budget > 100000) {
-      throw new Error("[ERROR] 구매금액은 100,000원 이하로 입력해주세요. ");
+      throw new Error(ERROR_MESSAGE.TOO_MUCH_BUDGET);
     }
   }
 

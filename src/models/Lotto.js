@@ -1,3 +1,5 @@
+import { ERROR_MESSAGE } from "../constants/messages";
+
 class Lotto {
   #numbers;
 
@@ -9,13 +11,13 @@ class Lotto {
 
   #validate(numbers) {
     if (numbers.length !== 6) {
-      throw new Error("[ERROR] 로또 번호는 6개여야 합니다.");
+      throw new Error(ERROR_MESSAGE.INVALID_COUNTS);
     }
   }
 
   #validateDuplication(numbers) {
     if (new Set(numbers).size < numbers.length) {
-      throw new Error("[ERROR] 로또 번호에 중복된 숫자들이 있습니다.");
+      throw new Error(ERROR_MESSAGE.DUPLICATE_NUMBERS);
     }
   }
 
