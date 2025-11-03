@@ -20,10 +20,10 @@ export const ERROR_MESSAGE = Object.freeze({
   TOO_MUCH_BUDGET: `${ERROR_PREFIX}  구매금액은 ${LOTTO_CONFIG.MAX_BUDGET}원 이하로 입력해주세요.`,
 });
 
-export const RANK_MESSAGE = {
+export const RANK_MESSAGE = Object.freeze({
   fifth: `3개 일치 (${PRIZE_BY_RANK.fifth.toLocaleString()}원)`,
   fourth: `4개 일치 (${PRIZE_BY_RANK.fourth.toLocaleString()}원)`,
   third: `5개 일치 (${PRIZE_BY_RANK.third.toLocaleString()}원)`,
   second: `5개 일치, 보너스 볼 일치 (${PRIZE_BY_RANK.second.toLocaleString()}원)`,
   first: `6개 일치 (${PRIZE_BY_RANK.first.toLocaleString()}원)`,
-};
+});
