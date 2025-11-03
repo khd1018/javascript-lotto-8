@@ -1,3 +1,4 @@
+import { MESSAGE } from "../constants/messages.js";
 import LottoFactory from "../factories/LottoFactory.js";
 import LottoProfit from "../models/LottoProfit.js";
 import LottoRankStats from "../models/LottoRankStats.js";
@@ -24,7 +25,7 @@ class LottoController {
   async #getUserBudget() {
     while (true) {
       try {
-        const userBudget = await InputView.askInput("구입금액을 입력해 주세요.\n");
+        const userBudget = await InputView.askInput(MESSAGE.ASK_BUDGET);
         this.#validate(userBudget);
 
         const budget = Number(userBudget);
@@ -49,7 +50,7 @@ class LottoController {
   async #getUserWinningNumbers() {
     while (true) {
       try {
-        const userWinningNumber = await InputView.askInput("당첨 번호를 입력해 주세요.\n");
+        const userWinningNumber = await InputView.askInput(MESSAGE.ASK_WINNING_NUM);
         const winningNumbers = userWinningNumber.split(",").map((winningNumber) => Number(winningNumber));
 
         this.#validateWinningNumbers(winningNumbers);
@@ -63,7 +64,7 @@ class LottoController {
   async #getUserBonusNumber(winningNumbers) {
     while (true) {
       try {
-        const userBonusNumber = await InputView.askInput("보너스 번호를 입력해 주세요.\n");
+        const userBonusNumber = await InputView.askInput(MESSAGE.ASK_BONUS_NUM);
         const bonusNumber = Number(userBonusNumber);
 
         this.#validateBonusNumber(bonusNumber, winningNumbers);
