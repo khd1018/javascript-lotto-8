@@ -1,4 +1,4 @@
-export const LOTTO_CONFIG = {
+export const LOTTO_CONFIG = Object.freeze({
   SEPERATOR: ",",
   DELIMITER: ", ",
   MIN_LOTTO_NUM: 1,
@@ -6,4 +6,4 @@ export const LOTTO_CONFIG = {
   LOTTO_NUM_COUNT: 6,
   LOTTO_PRICE: 1000,
   MAX_BUDGET: 100000,
-};
+});
