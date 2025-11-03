@@ -1,16 +1,8 @@
 import { Console } from "@woowacourse/mission-utils";
-import { MESSAGE } from "../constants/messages.js";
+import { MESSAGE, RANK_MESSAGE } from "../constants/messages.js";
 import { LOTTO_CONFIG } from "../constants/lottoConfigs.js";
 
 export const OutputView = {
-  RANK_STRING: {
-    fifth: "3개 일치 (5,000원)",
-    fourth: "4개 일치 (50,000원)",
-    third: "5개 일치 (1,500,000원)",
-    second: "5개 일치, 보너스 볼 일치 (30,000,000원)",
-    first: "6개 일치 (2,000,000,000원)",
-  },
-
   print(message) {
     Console.print(message);
   },
@@ -26,8 +18,8 @@ export const OutputView = {
   printRankStats(rankStats) {
     Console.print(MESSAGE.WINNING_RESULT);
 
-    Object.keys(this.RANK_STRING).forEach((rank) => {
-      Console.print(`${this.RANK_STRING[rank]} - ${rankStats[rank]}개`);
+    Object.keys(RANK_MESSAGE).forEach((rank) => {
+      Console.print(`${RANK_MESSAGE[rank]} - ${rankStats[rank]}개`);
     });
   },
 

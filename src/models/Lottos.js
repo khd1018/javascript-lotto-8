@@ -1,3 +1,5 @@
+import { LOTTO_CONFIG, RANK_MAP } from "../constants/lottoConfigs.js";
+
 class Lottos {
   #lottos;
 
@@ -10,19 +12,12 @@ class Lottos {
   }
 
   getLottoRanks(bonusNumber, winningNumbers) {
-    const RANK_MAP = {
-      3: "fifth",
-      4: "fourth",
-      5: "third",
-      6: "first",
-    };
-
     return this.#lottos.map((lotto) => {
       const matchCount = lotto.countMatches(winningNumbers);
       const rank = RANK_MAP[matchCount];
 
-      if (matchCount === 5 && lotto.contains(bonusNumber)) {
-        return "second";
+      if (matchCount === LOTTO_CONFIG.SECOND_MATCH_COUNT && lotto.contains(bonusNumber)) {
+        return LOTTO_CONFIG.SECOND_RANK;
       }
 
       if (rank) {

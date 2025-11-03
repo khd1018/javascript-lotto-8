@@ -20,7 +20,7 @@ class PurchaseAmount {
   }
 
   getLottoCount() {
-    return this.#budget / 1000;
+    return this.#budget / LOTTO_CONFIG.LOTTO_PRICE;
   }
 }
 
