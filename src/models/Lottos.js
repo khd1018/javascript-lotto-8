@@ -5,6 +5,10 @@ class Lottos {
     this.#lottos = lottos;
   }
 
+  getLottos() {
+    return this.#lottos;
+  }
+
   getLottoRanks(bonusNumber, winningNumbers) {
     const RANK_MAP = {
       3: "fifth",
