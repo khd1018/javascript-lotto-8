@@ -5,7 +5,7 @@ class LottoProfit {
     this.#totalProfit = 0;
   }
 
-  addPrizeBy(rank) {
+  addPrizeBy(lottoRanks) {
     const PRIZE_BY_RANK = {
       first: 2000000000,
       second: 30000000,
@@ -14,7 +14,11 @@ class LottoProfit {
       fifth: 5000,
     };
 
-    this.#totalProfit += PRIZE_BY_RANK[rank];
+    lottoRanks.forEach((lottoRank) => {
+      if (lottoRank) {
+        this.#totalProfit += PRIZE_BY_RANK[lottoRank];
+      }
+    });
   }
 
   calculateProfitRate(budget) {
