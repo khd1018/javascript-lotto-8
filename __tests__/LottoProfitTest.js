@@ -9,7 +9,7 @@ describe("LottoProfit 테스트", () => {
     const budget = 8000;
     const lottoProfit = new LottoProfit();
 
-    ranks.forEach((rank) => lottoProfit.addPrizeBy(rank));
+    lottoProfit.addPrizeBy(ranks);
 
     expect(lottoProfit.calculateProfitRate(budget)).toBe(totalProfitRate);
   });
