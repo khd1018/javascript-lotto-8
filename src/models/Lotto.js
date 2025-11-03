@@ -1,4 +1,5 @@
-import { ERROR_MESSAGE } from "../constants/messages";
+import { LOTTO_CONFIG } from "../constants/lottoConfigs.js";
+import { ERROR_MESSAGE } from "../constants/messages.js";
 
 class Lotto {
   #numbers;
@@ -10,7 +11,7 @@ class Lotto {
   }
 
   #validate(numbers) {
-    if (numbers.length !== 6) {
+    if (numbers.length !== LOTTO_CONFIG.LOTTO_NUM_COUNT) {
       throw new Error(ERROR_MESSAGE.INVALID_COUNTS);
     }
   }

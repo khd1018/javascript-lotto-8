@@ -1,4 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
+import { MESSAGE } from "../constants/messages.js";
+import { LOTTO_CONFIG } from "../constants/lottoConfigs.js";
 
 export const OutputView = {
   RANK_STRING: {
@@ -17,12 +19,12 @@ export const OutputView = {
     Console.print(`${lottos.length}개를 구매했습니다.`);
 
     lottos.forEach((lotto) => {
-      Console.print(`[${lotto.join(", ")}]`);
+      Console.print(`[${lotto.join(LOTTO_CONFIG.DELIMITER)}]`);
     });
   },
 
   printRankStats(rankStats) {
-    Console.print("당첨 통계\n---");
+    Console.print(MESSAGE.WINNING_RESULT);
 
     Object.keys(this.RANK_STRING).forEach((rank) => {
       Console.print(`${this.RANK_STRING[rank]} - ${rankStats[rank]}개`);

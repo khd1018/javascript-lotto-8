@@ -1,5 +1,6 @@
 import { Random } from "@woowacourse/mission-utils";
 import Lotto from "../models/Lotto.js";
+import { LOTTO_CONFIG } from "../constants/lottoConfigs.js";
 
 class LottoFactory {
   static createLottos(lottoCount) {
@@ -14,7 +15,7 @@ class LottoFactory {
   }
 
   static #generateNumbers() {
-    const number = Random.pickUniqueNumbersInRange(1, 45, 6);
+    const number = Random.pickUniqueNumbersInRange(LOTTO_CONFIG.MIN_LOTTO_NUM, LOTTO_CONFIG.MAX_LOTTO_NUM, LOTTO_CONFIG.LOTTO_NUM_COUNT);
     return number;
   }
 }

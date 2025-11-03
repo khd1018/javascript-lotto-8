@@ -1,3 +1,4 @@
+import { LOTTO_CONFIG } from "../constants/lottoConfigs.js";
 import { MESSAGE } from "../constants/messages.js";
 import LottoFactory from "../factories/LottoFactory.js";
 import LottoProfit from "../models/LottoProfit.js";
@@ -51,7 +52,7 @@ class LottoController {
     while (true) {
       try {
         const userWinningNumber = await InputView.askInput(MESSAGE.ASK_WINNING_NUM);
-        const winningNumbers = userWinningNumber.split(",").map((winningNumber) => Number(winningNumber));
+        const winningNumbers = userWinningNumber.split(LOTTO_CONFIG.SEPERATOR).map((winningNumber) => Number(winningNumber));
 
         this.#validateWinningNumbers(winningNumbers);
         return winningNumbers;
