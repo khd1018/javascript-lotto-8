@@ -7,15 +7,15 @@ class LottoFactory {
 
     for (let count = 0; count < lottoCount; count++) {
       const numbers = this.#generateNumbers();
-      lottos.push(new Lotto(numbers.sort()));
+      lottos.push(new Lotto(numbers.sort((a, b) => a - b)));
     }
 
     return lottos;
   }
 
   static #generateNumbers() {
-    const numbers = Random.pickUniqueNumbersInRange(1, 45, 6);
-    return numbers.sort((a, b) => a - b);
+    const number = Random.pickUniqueNumbersInRange(1, 45, 6);
+    return number;
   }
 }
 
