@@ -15,10 +15,12 @@ class LottoRankStats {
     return this.#rankCounts;
   }
 
-  record(rank) {
-    if (rank) {
-      this.#rankCounts[rank]++;
-    }
+  record(ranks) {
+    ranks.forEach((rank) => {
+      if (rank) {
+        this.#rankCounts[rank]++;
+      }
+    });
   }
 }
 
